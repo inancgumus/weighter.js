@@ -1,0 +1,30 @@
+{
+  "name": "weighter.js",
+  "version": "0.0.1",
+  "description": "Calculates probability weights on the property specified",
+  "main": "weighter.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:deeperx/weighter.js.git"
+  },
+  "keywords": [
+    "weight",
+    "probability"
+  ],
+  "author": "deeperx",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "bugs": {
+    "url": "https://github.com/deeperx/weighter.js/issues"
+  },
+  "homepage": "https://github.com/deeperx/weighter.js",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
