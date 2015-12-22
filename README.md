@@ -6,8 +6,8 @@
 var Weighter = require('./weighter');
 
 var items = [
-  { id: 1, budget: 100 },
-  { id: 2, budget:  50 }
+  { id: 1, budget: 75 },
+  { id: 2, budget: 25 }
 ];
 
 // weighter.js will add weight property to the items automatically
