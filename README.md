@@ -56,6 +56,6 @@ Your contributions are very welcome here. I'm waiting for your PRs.
 # fork
 npm i
 # hack hack hack
-npm run test
+npm test
 # push
 ```
