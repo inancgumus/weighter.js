@@ -1,25 +1,41 @@
 # weighter.js
 
-## Example
+Use `weighter.js` to easily assign probability weights to your objects fields.
+
+This is a tiny library and may help someone out there, I don't know, it helped me.
+
+## Where am I going to use this?
+
+Look at the bare example below. There is a collection named `items`. And the collection stores some items with a `budget` field. Say you want to distribute your results according to the budget. Use `weighter.js` to calculate the weighted probabilities among the budgets. So, you can easily distribute.
+
+Actually, you can do this easily by hand. But, using such a tiny library is beneficial because, it's tested, can be extended and covers the knowledge in one place. Single-Responsibility-Principle is good.
+
+## Bare Example
 
 ```javascript
-var Weighter = require('./weighter');
+const Weighter = require('./weighter')
 
-var items = [
+let items = [
   { id: 1, budget: 75 },
   { id: 2, budget: 25 }
-];
+]
 
 // weighter.js will add weight property to the items automatically
-var weighter = new Weighter({ prop: 'budget' });
+let weighter = new Weighter({ prop: 'budget' })
 
 // let's calculate
-var result = weighter.calculate(items);
+let result = weighter.calculate(items)
 
 // let's see the result
-console.log(result);
+console.log(result)
 
 // outputs:
 // [ { id: 1, budget: 75, weight: 0.75 },
 //   { id: 2, budget: 25, weight: 0.25 } ]
 ```
+
+## Beware
+
+`Weight.js` modifies the object, so you want to copy it before to make it immutable. (_Note: Maybe I should have add this to the library._)
+
+Also, although this library is used in production code, it's missing some features that resides in my production code. Maybe, I should take them here sometime. Like, fetching items according to their weighted probabilities from a collection.
