@@ -40,6 +40,10 @@ console.log(result)
 
 Also, although this library is used in my production code, it's missing some features that resides in my production code. Maybe, I should take them here sometime. Like: Fetching items according to their weighted probabilities from a collection.
 
+## Test Results
+
+![Test results](https://github.com/inancgumus/weighter.js/blob/master/test-results.png)
+
 ## License
 
 The code is released under an MIT license. See the [LICENSE](./LICENSE) file for more information.
@@ -47,3 +51,11 @@ The code is released under an MIT license. See the [LICENSE](./LICENSE) file for
 ## Contributing
 
 Your contributions are very welcome here. I'm waiting for your PRs.
+
+```bash
+# fork
+npm i
+# hack hack hack
+npm run test
+# push
+```
