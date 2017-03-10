@@ -1,4 +1,4 @@
-# TODO: Remove underscore dependency. ES6 has methods for most of its functions
+// TODO: Remove underscore dependency. ES6 has methods for most of its functions
 var _  = require('underscore')
   , _prop
   ;
