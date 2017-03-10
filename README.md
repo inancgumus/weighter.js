@@ -39,3 +39,11 @@ console.log(result)
 `Weight.js` modifies the object, so you want to copy it before to make it immutable. (_Note: Maybe I should have add this to the library._)
 
 Also, although this library is used in production code, it's missing some features that resides in my production code. Maybe, I should take them here sometime. Like, fetching items according to their weighted probabilities from a collection.
+
+## License
+
+The code is released under an MIT license. See the [LICENSE](./LICENSE) file for more information.
+
+## Contributing
+
+Your contributions are very welcome here. I'm waiting for your PRs.
