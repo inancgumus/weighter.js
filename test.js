@@ -6,7 +6,7 @@ chai.should();
 
 describe( "weighter: gives weights to items according to a specified property", function() {
 
-  var Weighter      = require('./weighter')
+  var Weighter        = require('./weighter')
     , weighter
     , items
     , itemsOriginal   = [
@@ -21,7 +21,7 @@ describe( "weighter: gives weights to items according to a specified property", 
 
 
   beforeEach(function() {
-    weighter  = new Weighter({ prop: 'prop' });
+    weighter    = new Weighter({ prop: 'prop' });
     items       = JSON.parse(JSON.stringify(itemsOriginal));
     items2      = JSON.parse(JSON.stringify(itemsOriginal2));
   });
@@ -65,12 +65,21 @@ describe( "weighter: gives weights to items according to a specified property", 
       result[1].weight.should.equal(0.75);
     });
 
+    
+    it( "can assign different property name for weight assignments", function() {
+      // default property name is: weight
+      var weighter  = new Weighter({ prop: 'budget' })
+        , items     = [ { budget: 500 } ];
+
+      weighter.calculate(items)[0].should.have.ownProperty('weight');
+    });    
+    
   });
 
 
   describe( "weird cases", function() {
 
-    it( "should return return no item if no items supplied", function() {
+    it( "should return no item if no items supplied", function() {
       weighter.calculate().should.be.an('array');
       weighter.calculate([]).should.be.an('array');
       weighter.calculate([]).length.should.equal(0);
@@ -114,7 +123,7 @@ describe( "weighter: gives weights to items according to a specified property", 
       weighter.calculate(items)[1].weight.should.equal(0.0);
     });
 
-    it( "should skips null items", function() {
+    it( "should skip null items", function() {
       var items = [
         // only use these items
         { prop: 75                    },
@@ -131,14 +140,6 @@ describe( "weighter: gives weights to items according to a specified property", 
       result.length.should.equal(2);
       result[0].weight.should.equal(0.75);
       result[1].weight.should.equal(0.25);
-    });
-
-
-    it( "can use different weight calculating property name", function() {
-      var weighter  = new Weighter({ prop: 'budget' })
-        , items     = [ { budget: 500 } ];
-
-      weighter.calculate(items)[0].should.have.ownProperty('weight');
     });
 
 
